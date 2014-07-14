@@ -23,18 +23,3 @@ var blogEntryOne = new BlogEntry({
 	author: "Taylor Smith",
 	tags: ["Neato Frito", "Making a blog", "Wowzers!"],
 })
-var BlogView = Backbone.View.extend({
-
-		initialize: function() {
-		console.log('Hey! initialize is running!');
-
-	});
-
-var blogViewOne = new BlogView ({
-	el: $('.hero-unit ul'),
-});
-	var BlogCollection = Backbone.Collection.extend ({
-		model: BlogEntry,
-		url: "http://tiy-atl-fe-server.herokuapp.com/collections/taylorSmithBlog",
-});
-// console.log('The Iron Yard Rocks');
