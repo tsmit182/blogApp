@@ -24,3 +24,10 @@ body {
     letter-spacing: -1px;
   }
 }
+
+//Styling for the input form:
+.newBlogPost_input {
+  // @include span-columns(4);
+width: 60%;
+}
+

@@ -35,3 +35,19 @@ var BlogEntry = Backbone.Model.extend ({
 		model: BlogEntry,
 		url: "http://tiy-atl-fe-server.herokuapp.com/collections/taylorSmithBlog",
 });
+var BlogView = Backbone.View.extend({
+
+		initialize: function() {
+		console.log('Hey! initialize is running!');
+
+	},
+
+});
+
+var blogViewOne = new BlogView ({
+	el: $('.hero-unit ul'),
+	});
+
+// console.log('The Iron Yard Rocks');
+
+//blogViewOne.fetch()
