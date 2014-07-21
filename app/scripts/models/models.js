@@ -6,7 +6,7 @@ var BlogEntry = Backbone.Model.extend ({
 	defaults: {
 	  title: "", // String
 	  content: "", // String
-	  date: "", // String
+	  date: "", // Date
 	  status: "", // String
 	  author: "", // String
 	  tags: [] // Array of Strings

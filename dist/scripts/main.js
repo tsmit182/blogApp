@@ -6,7 +6,7 @@ var BlogEntry = Backbone.Model.extend ({
 	defaults: {
 	  title: "", // String
 	  content: "", // String
-	  date: "", // String
+	  date: "", // Date
 	  status: "", // String
 	  author: "", // String
 	  tags: [] // Array of Strings
@@ -37,10 +37,26 @@ var BlogEntry = Backbone.Model.extend ({
 });
 var BlogView = Backbone.View.extend({
 
-		initialize: function() {
-		console.log('Hey! initialize is running!');
+	el: ".hero-unit",
+
+	events: {
+		'submit #newBlogPost_input': 'newPost'
+	}
+
+	initialize: function() {
+		this.render();
+		this.collection.on('change', this.render, this);
+		this.collection.on('destroy', this.render, this);
+	},
+
+	render: function (){
 
 	},
+
+	newPost: function(e){
+		event.preventDefault();
+    event.stopPropagation();
+	}
 
 });
 
