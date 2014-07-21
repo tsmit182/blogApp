@@ -1,9 +1,21 @@
 var BlogView = Backbone.View.extend({
 
-		initialize: function() {
+	el: ".hero-unit",
+
+	events: {
+		
+	}
+
+	initialize: function() {
 		console.log('Hey! initialize is running!');
 
 	},
+
+	render: function (){
+
+	},
+
+	
 
 });
 
