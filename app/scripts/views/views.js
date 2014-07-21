@@ -3,19 +3,23 @@ var BlogView = Backbone.View.extend({
 	el: ".hero-unit",
 
 	events: {
-		
+		'submit #newBlogPost_input': 'newPost'
 	}
 
 	initialize: function() {
-		console.log('Hey! initialize is running!');
-
+		this.render();
+		this.collection.on('change', this.render, this);
+		this.collection.on('destroy', this.render, this);
 	},
 
 	render: function (){
 
 	},
 
-	
+	newPost: function(e){
+
+		
+	}
 
 });
 
