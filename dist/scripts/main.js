@@ -46,7 +46,7 @@ var BlogView = Backbone.View.extend({
 	initialize: function() {
 		this.render();
 		this.collection.on('change', this.render, this);
-		this.collection.on('destroy', this.render, this);
+		// this.collection.on('destroy', this.render, this);
 	},
 
 	render: function (){
