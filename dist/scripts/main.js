@@ -64,6 +64,9 @@ var blogViewOne = new BlogView ({
 	el: $('.hero-unit ul'),
 	});
 
-// console.log('The Iron Yard Rocks');
+var post_list = new BlogCollection();
 
-//blogViewOne.fetch()
+post_list.fetch().done( (){
+
+
+})
