@@ -35,7 +35,7 @@ var BlogEntry = Backbone.Model.extend ({
 		model: BlogEntry,
 		url: "http://tiy-atl-fe-server.herokuapp.com/collections/taylorSmithBlog",
 });
-var BlogView = Backbone.View.extend({
+var InputView = Backbone.View.extend({
 
 	el: ".hero-unit",
 
@@ -46,11 +46,13 @@ var BlogView = Backbone.View.extend({
 	initialize: function() {
 		this.render();
 		this.collection.on('change', this.render, this);
-		// this.collection.on('destroy', this.render, this);
+		this.collection.on('destroy', this.render, this);
 	},
 
 	render: function (){
 
+    var template = Handlebars.compile($('#blogInputHere').html());
+    var rendered = template(single.toJSON());
 	},
 
 	newPost: function(e){
@@ -60,10 +62,34 @@ var BlogView = Backbone.View.extend({
 
 });
 
-var blogViewOne = new BlogView ({
-	el: $('.hero-unit ul'),
+var blogViewOne = new InputView ({
+	el: $('.hero-unit ul')
 	});
+var OutputView = Backbone.View.extend({
+	
+	el: #blogPost_output,
 
+	events: {
+		'click #edit' : 'editPost'
+		'click #delete' : 'deletePost'
+	}
+
+	editPost: function (e) {
+    event.preventDefault();
+    event.stopPropagation();
+    var editable = this.collection.get($('.post_id').val());
+	}
+
+	deletePost: function(e) {
+		event.preventDefault();
+    event.stopPropagation();
+	}
+
+});
+
+blogOutputView = new OutputView ({
+
+});
 var post_list = new BlogCollection();
 
 post_list.fetch().done( (){

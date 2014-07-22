@@ -14,6 +14,8 @@ var InputView = Backbone.View.extend({
 
 	render: function (){
 
+    var template = Handlebars.compile($('#blogInputHere').html());
+    var rendered = template(single.toJSON());
 	},
 
 	newPost: function(e){
@@ -24,5 +26,5 @@ var InputView = Backbone.View.extend({
 });
 
 var blogViewOne = new InputView ({
-	el: $('.hero-unit ul'),
+	el: $('.hero-unit ul')
 	});

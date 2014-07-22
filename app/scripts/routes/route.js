@@ -6,11 +6,11 @@ var BlogRouter = Backbone.Router.extend({
   },
 
   home: function () {
-    new BlogView({ collection: whiskey_list });
+    new InputView({ collection: post_list });
   },
 
   post: function (id) {
-    new WhiskeyEditView({ postid: id, collection: whiskey_list });
+    new ({ postid: id, collection:  });
   },
 
 });

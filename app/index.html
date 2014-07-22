@@ -37,11 +37,22 @@
           <button type="submit" name="postSubmit">Submit</button>
         </form>
         <div id="blogPost_output">
+
         </div>
     </div>
 
+    <script type="text/x-handlebars-template" id="blogInputHere">
+
+    </script>
+
     <!--Blog Post Output-->
 
+    <script type="text/x-handlebars-template" id="blogOutputHere">
+
+        <input type="hidden" value="{{ _id }}" class="post_id" />
+          <button id="edit"></button>
+          <button id="delete"></button>
+    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -54,8 +65,8 @@
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/models/models.js"></script>
-        <script src="scripts/views/views.js"></script>
-        <script src="scripts/collections/collections.js"></script>
+        <script src="scripts/views/inputView.js"></script>
+        <script src="scripts/views/outputView.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
