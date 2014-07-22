@@ -10,7 +10,7 @@ var BlogRouter = Backbone.Router.extend({
   },
 
   post: function (id) {
-    new ({ postid: id, collection:  });
+    new OutputView({ postid: id, collection:  });
   },
 
 });
