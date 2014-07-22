@@ -1,4 +1,4 @@
-var BlogView = Backbone.View.extend({
+var InputView = Backbone.View.extend({
 
 	el: ".hero-unit",
 
@@ -9,7 +9,7 @@ var BlogView = Backbone.View.extend({
 	initialize: function() {
 		this.render();
 		this.collection.on('change', this.render, this);
-		// this.collection.on('destroy', this.render, this);
+		this.collection.on('destroy', this.render, this);
 	},
 
 	render: function (){
@@ -23,6 +23,6 @@ var BlogView = Backbone.View.extend({
 
 });
 
-var blogViewOne = new BlogView ({
+var blogViewOne = new InputView ({
 	el: $('.hero-unit ul'),
 	});
